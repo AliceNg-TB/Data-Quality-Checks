@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#fff}svg{max-width:100%;height:auto}</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="tbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <style>
+    <![CDATA[
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap');
+    .title {
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      fill: #f8fafc;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      fill: #94a3b8;
+    }
+    .item-en {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      fill: #e2e8f0;
+    }
+    .item-zh {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      fill: #94a3b8;
+    }
+    .item-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      fill: url(#accentGrad);
+    }
+    .card {
+      fill: url(#cardGrad);
+      stroke: #334155;
+      stroke-width: 1;
+      transition: all 0.3s ease;
+      filter: url(#shadow);
+    }
+    .card-group:hover .card {
+      stroke: url(#accentGrad);
+      stroke-width: 2;
+      filter: url(#glow);
+      transform: translateY(-2px);
+    }
+    .card-group:hover .icon {
+      transform: scale(1.1);
+    }
+    .icon {
+      transition: transform 0.3s ease;
+      transform-origin: center;
+    }
+    .tb-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      fill: #f8fafc;
+    }
+    .grid-line {
+      stroke: #1e293b;
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+    }
+    ]]>
+  </style>
+  
+  <rect width="1200" height="1600" fill="url(#bgGrad)"/>
+  
+  <g opacity="0.03">
+    <path d="M0 100 H1200" class="grid-line"/>
+    <path d="M0 200 H1200" class="grid-line"/>
+    <path d="M0 300 H1200" class="grid-line"/>
+    <path d="M0 400 H1200" class="grid-line"/>
+    <path d="M0 500 H1200" class="grid-line"/>
+    <path d="M0 600 H1200" class="grid-line"/>
+    <path d="M0 700 H1200" class="grid-line"/>
+    <path d="M0 800 H1200" class="grid-line"/>
+    <path d="M0 900 H1200" class="grid-line"/>
+    <path d="M0 1000 H1200" class="grid-line"/>
+    <path d="M0 1100 H1200" class="grid-line"/>
+    <path d="M0 1200 H1200" class="grid-line"/>
+    <path d="M0 1300 H1200" class="grid-line"/>
+    <path d="M0 1400 H1200" class="grid-line"/>
+    <path d="M0 1500 H1200" class="grid-line"/>
+    <path d="M100 0 V1600" class="grid-line"/>
+    <path d="M300 0 V1600" class="grid-line"/>
+    <path d="M500 0 V1600" class="grid-line"/>
+    <path d="M700 0 V1600" class="grid-line"/>
+    <path d="M900 0 V1600" class="grid-line"/>
+    <path d="M1100 0 V1600" class="grid-line"/>
+  </g>
+  
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="url(#tbGrad)" filter="url(#shadow)"/>
+    <text x="30" y="41" text-anchor="middle" class="tb-text">TB</text>
+  </g>
+  
+  <g transform="translate(120, 40)">
+    <text x="0" y="35" class="title">Data Quality Checks</text>
+    <rect x="0" y="50" width="320" height="4" rx="2" fill="url(#accentGrad)"/>
+    <text x="0" y="75" class="subtitle">Essential validation rules for robust data pipelines</text>
+    <text x="0" y="95" class="subtitle">穩健資料管線的必備驗證規則</text>
+  </g>
+
+  <g transform="translate(40, 170)">
+    
+    <g class="card-group" transform="translate(0, 0)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">01</text>
+      <g class="icon" transform="translate(485, 20)">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#06b6d4" stroke-width="2"/>
+        <path d="M20 12 L20 20 L26 26" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="2" fill="#06b6d4"/>
+      </g>
+      <text x="20" y="55" class="item-en">Null or missing values check</text>
+      <text x="20" y="78" class="item-zh">空值或缺失值檢查</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 0)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">02</text>
+      <g class="icon" transform="translate(485, 20)">
+        <rect x="8" y="8" width="24" height="24" rx="2" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <path d="M15 20 L18 23 L25 16" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="20" y="55" class="item-en">Primary key uniqueness check</text>
+      <text x="20" y="78" class="item-zh">主鍵唯一性檢查</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 120)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">03</text>
+      <g class="icon" transform="translate(485, 20)">
+        <circle cx="14" cy="20" r="10" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+        <circle cx="26" cy="20" r="10" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+        <path d="M14 20 L26 20" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="2 2"/>
+      </g>
+      <text x="20" y="55" class="item-en">Duplicate record detection</text>
+      <text x="20" y="78" class="item-zh">重複資料偵測</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 120)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">04</text>
+      <g class="icon" transform="translate(485, 20)">
+        <path d="M10 12 L30 12 L30 28 L10 28 Z" fill="none" stroke="#06b6d4" stroke-width="2"/>
+        <path d="M15 12 L15 8 L25 8 L25 12" fill="none" stroke="#06b6d4" stroke-width="2"/>
+        <path d="M20 18 L20 22" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="20" cy="16" r="1.5" fill="#06b6d4"/>
+      </g>
+      <text x="20" y="55" class="item-en">Referential integrity validation</text>
+      <text x="20" y="78" class="item-zh">參照完整性驗證</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 240)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">05</text>
+      <g class="icon" transform="translate(485, 20)">
+        <path d="M12 12 L20 12 L20 20 L12 20 Z" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <path d="M24 12 L32 20 L24 20 Z" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <path d="M12 24 L20 24 L20 32 L12 32 Z" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <path d="M24 24 L32 32 L24 32 Z" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <text x="16" y="18" font-size="6" fill="#3b82f6" text-anchor="middle">T</text>
+        <text x="28" y="18" font-size="6" fill="#3b82f6" text-anchor="middle">I</text>
+        <text x="16" y="30" font-size="6" fill="#3b82f6" text-anchor="middle">S</text>
+      </g>
+      <text x="20" y="55" class="item-en">Data type validation against schema</text>
+      <text x="20" y="78" class="item-zh">根據 Schema 驗證資料型別</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 240)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">06</text>
+      <g class="icon" transform="translate(485, 20)">
+        <line x1="8" y1="32" x2="32" y2="32" stroke="#8b5cf6" stroke-width="2"/>
+        <line x1="12" y1="32" x2="12" y2="12" stroke="#8b5cf6" stroke-width="2"/>
+        <rect x="16" y="24" width="4" height="8" fill="#8b5cf6"/>
+        <rect x="22" y="16" width="4" height="16" fill="#8b5cf6"/>
+        <rect x="28" y="20" width="4" height="12" fill="#8b5cf6"/>
+      </g>
+      <text x="20" y="55" class="item-en">Numeric range checks (e.g. 0-100%)</text>
+      <text x="20" y="78" class="item-zh">數值範圍檢查 (如 0-100%)</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 360)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">07</text>
+      <g class="icon" transform="translate(485, 20)">
+        <path d="M12 14 L28 14" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 20 L28 20" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 26 L20 26" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="26" r="3" fill="none" stroke="#06b6d4" stroke-width="2"/>
+      </g>
+      <text x="20" y="55" class="item-en">String length validation</text>
+      <text x="20" y="78" class="item-zh">字串長度驗證</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 360)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">08</text>
+      <g class="icon" transform="translate(485, 20)">
+        <path d="M10 20 Q15 12, 20 20 T30 20" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <text x="20" y="32" font-size="14" fill="#3b82f6" text-anchor="middle">@</text>
+      </g>
+      <text x="20" y="55" class="item-en">Regex pattern validation (email, phone, IDs)</text>
+      <text x="20" y="78" class="item-zh">正則表達式驗證 (Email、電話、ID)</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 480)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">09</text>
+      <g class="icon" transform="translate(485, 20)">
+        <rect x="10" y="10" width="20" height="20" rx="3" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+        <path d="M15 20 L18 23 L25 16" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="15" cy="15" r="1" fill="#8b5cf6"/>
+        <circle cx="25" cy="25" r="1" fill="#8b5cf6"/>
+      </g>
+      <text x="20" y="55" class="item-en">Allowed values/domain validation</text>
+      <text x="20" y="78" class="item-zh">允許值/定義域驗證</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 480)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">10</text>
+      <g class="icon" transform="translate(485, 20)">
+        <rect x="8" y="16" width="8" height="16" fill="#06b6d4"/>
+        <rect x="18" y="10" width="8" height="22" fill="#06b6d4"/>
+        <rect x="28" y="20" width="8" height="12" fill="#06b6d4"/>
+        <path d="M8 14 L18 8 L28 18 L36 12" fill="none" stroke="#06b6d4" stroke-width="2"/>
+      </g>
+      <text x="20" y="55" class="item-en">Business rule consistency (aggregates, totals)</text>
+      <text x="20" y="78" class="item-zh">商業規則一致性 (加總、合計)</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 600)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">11</text>
+      <g class="icon" transform="translate(485, 20)">
+        <circle cx="12" cy="20" r="4" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <circle cx="28" cy="20" r="4" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <path d="M16 20 L24 20" stroke="#3b82f6" stroke-width="2"/>
+        <path d="M20 16 L20 24" stroke="#3b82f6" stroke-width="2"/>
+      </g>
+      <text x="20" y="55" class="item-en">Cross-column consistency checks</text>
+      <text x="20" y="78" class="item-zh">跨欄位一致性檢查</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 600)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">12</text>
+      <g class="icon" transform="translate(485, 20)">
+        <circle cx="20" cy="20" r="14" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+        <path d="M20 12 L20 20 L25 25" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 12 L16 8 M28 12 L24 8" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <text x="20" y="55" class="item-en">Timeliness/freshness check against SLA</text>
+      <text x="20" y="78" class="item-zh">資料時效性/SLA 檢查</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 720)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">13</text>
+      <g class="icon" transform="translate(485, 20)">
+        <path d="M12 12 L28 28 L12 28 Z" fill="none" stroke="#06b6d4" stroke-width="2"/>
+        <path d="M12 16 L28 16 M12 20 L28 20 M12 24 L28 24" stroke="#06b6d4" stroke-width="1"/>
+        <circle cx="32" cy="20" r="3" fill="#06b6d4"/>
+      </g>
+      <text x="20" y="55" class="item-en">Completeness check (all expected partitions/files)</text>
+      <text x="20" y="78" class="item-zh">完整性檢查 (分區/檔案是否到齊)</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 720)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">14</text>
+      <g class="icon" transform="translate(485, 20)">
+        <path d="M8 28 L16 20 L24 24 L32 12" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <circle cx="16" cy="20" r="2" fill="#3b82f6"/>
+        <circle cx="24" cy="24" r="2" fill="#3b82f6"/>
+        <circle cx="32" cy="12" r="2" fill="#3b82f6"/>
+        <path d="M8 12 L32 12" stroke="#3b82f6" stroke-width="1" stroke-dasharray="2 2"/>
+      </g>
+      <text x="20" y="55" class="item-en">Volume checks against historical thresholds</text>
+      <text x="20" y="78" class="item-zh">資料量歷史門檻檢查</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 840)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">15</text>
+      <g class="icon" transform="translate(485, 20)">
+        <path d="M8 28 Q16 12, 24 20 T32 28" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+        <line x1="20" y1="12" x2="20" y2="28" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="2 2"/>
+        <circle cx="20" cy="20" r="2" fill="#8b5cf6"/>
+      </g>
+      <text x="20" y="55" class="item-en">Distribution checks (mean, median, std deviation)</text>
+      <text x="20" y="78" class="item-zh">分佈檢查 (平均數、中位數、標準差)</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 840)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">16</text>
+      <g class="icon" transform="translate(485, 20)">
+        <circle cx="12" cy="24" r="2" fill="#06b6d4"/>
+        <circle cx="18" cy="22" r="2" fill="#06b6d4"/>
+        <circle cx="24" cy="26" r="2" fill="#06b6d4"/>
+        <circle cx="30" cy="10" r="2" fill="#ef4444"/>
+        <circle cx="30" cy="10" r="5" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+      </g>
+      <text x="20" y="55" class="item-en">Outlier detection for abnormal values</text>
+      <text x="20" y="78" class="item-zh">異常值/離群值偵測</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 960)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">17</text>
+      <g class="icon" transform="translate(485, 20)">
+        <rect x="10" y="18" width="6" height="14" fill="#3b82f6"/>
+        <rect x="18" y="14" width="6" height="18" fill="#3b82f6"/>
+        <rect x="26" y="10" width="6" height="22" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2 1"/>
+        <path d="M29 8 L29 5" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowhead)"/>
+      </g>
+      <text x="20" y="55" class="item-en">Schema drift detection (new/removed columns)</text>
+      <text x="20" y="78" class="item-zh">Schema 結構飄移偵測 (新增/移除欄位)</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 960)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">18</text>
+      <g class="icon" transform="translate(485, 20)">
+        <rect x="8" y="12" width="12" height="16" rx="1" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+        <rect x="20" y="12" width="12" height="16" rx="1" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+        <path d="M14 18 L26 18" stroke="#ef4444" stroke-width="2"/>
+        <circle cx="20" cy="18" r="5" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+      </g>
+      <text x="20" y="55" class="item-en">Duplicate file ingestion across systems</text>
+      <text x="20" y="78" class="item-zh">跨系統重複檔案攝入</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 1080)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">19</text>
+      <g class="icon" transform="translate(485, 20)">
+        <circle cx="20" cy="20" r="14" fill="none" stroke="#06b6d4" stroke-width="2"/>
+        <path d="M15 20 L25 20" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <text x="20" y="55" class="item-en">Negative value checks where not allowed</text>
+      <text x="20" y="78" class="item-zh">不允許負值的欄位檢查</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 1080)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">20</text>
+      <g class="icon" transform="translate(485, 20)">
+        <circle cx="20" cy="20" r="14" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <path d="M20 6 A14 14 0 0 1 32 14" stroke="#3b82f6" stroke-width="3"/>
+        <text x="20" y="25" font-size="10" fill="#3b82f6" text-anchor="middle">100%</text>
+      </g>
+      <text x="20" y="55" class="item-en">Percentage/total consistency checks</text>
+      <text x="20" y="78" class="item-zh">百分比/總計一致性檢查</text>
+    </g>
+    
+    <g class="card-group" transform="translate(0, 1200)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">21</text>
+      <g class="icon" transform="translate(485, 20)">
+        <circle cx="20" cy="12" r="3" fill="#8b5cf6"/>
+        <circle cx="12" cy="24" r="3" fill="#8b5cf6"/>
+        <circle cx="28" cy="24" r="3" fill="#8b5cf6"/>
+        <path d="M20 15 L12 21 M20 15 L28 21" stroke="#8b5cf6" stroke-width="2"/>
+      </g>
+      <text x="20" y="55" class="item-en">Hierarchy validation (region → country → state)</text>
+      <text x="20" y="78" class="item-zh">階層驗證 (區域→國家→州)</text>
+    </g>
+    
+    <g class="card-group" transform="translate(580, 1200)">
+      <rect class="card" x="0" y="0" width="540" height="100" rx="12"/>
+      <text x="20" y="30" class="item-num">22</text>
+      <g class="icon" transform="translate(485, 20)">
+        <path d="M12 10 L28 10 L28 30 L12 30 Z" fill="none" stroke="#06b6d4" stroke-width="2"/>
+        <path d="M16 16 L24 16 M16 20 L24 20 M16 24 L20 24" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="10" r="3" fill="#3b82f6"/>
+        <path d="M26 10 L27 11 L30 8" stroke="#f8fafc" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </g>
+      <text x="20" y="55" class="item-en">Audit column consistency checks</text>
+      <text x="20" y="78" class="item-zh">稽核欄位一致性檢查</text>
+    </g>
+    
+  </g>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <g transform="translate(0, 1530)">
+    <rect x="40" y="0" width="1120" height="1" fill="#334155"/>
+    <text x="600" y="35" text-anchor="middle" class="subtitle">Data Engineering Best Practices · © 2025</text>
+  </g>
+</svg>
+</body>
+</html>
