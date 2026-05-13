@@ -131,15 +131,28 @@
     <path d="M1100 0 V1600" class="grid-line"/>
   </g>
   
-<g transform="translate(1200, 30)">
-  <image 
-    href="D:\Pictures\Lucky.png" 
-    x="-100" 
-    width="60" 
-    height="60"
-    preserveAspectRatio="xMidYMid meet"
-  />
-</g>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .tb-color { fill: #0B5A30; }
+    .clover-color { fill: #1A8A4F; }
+  </style>
+  
+  <!-- TB 字母，用單一 path 更好控制 -->
+  <path class="tb-color" d="M40 60 H180 V110 H140 V240 H90 V110 H40 Z M220 60 H300 C333 60 360 87 360 120 C360 153 333 180 300 180 H240 V120 H220 V60 Z M240 180 H290 C318 180 340 202 340 230 C340 258 318 280 290 280 H240 V180 Z"/>
+  
+  <!-- 四葉草，改用 symbol 重複使用 -->
+  <defs>
+    <path id="leaf" d="M0 0 C-12 -12, -12 -25, 0 -25 C12 -25, 12 -12, 0 0 Z"/>
+  </defs>
+  
+  <g class="clover-color" transform="translate(195, 155)">
+    <use href="#leaf" transform="rotate(45) translate(0, -18)"/>
+    <use href="#leaf" transform="rotate(135) translate(0, -18)"/>
+    <use href="#leaf" transform="rotate(225) translate(0, -18)"/>
+    <use href="#leaf" transform="rotate(315) translate(0, -18)"/>
+    <rect x="-2" y="0" width="4" height="30" rx="2"/>
+  </g>
+</svg>
   
   <g transform="translate(120, 40)">
     <text x="0" y="35" class="title">Data Quality Checks</text>
