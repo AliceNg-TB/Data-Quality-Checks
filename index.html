@@ -137,20 +137,20 @@
     .clover-color { fill: #1A8A4F; }
   </style>
   
-  <!-- TB 字母，用單一 path 更好控制 -->
-  <path class="tb-color" d="M40 60 H180 V110 H140 V240 H90 V110 H40 Z M220 60 H300 C333 60 360 87 360 120 C360 153 333 180 300 180 H240 V120 H220 V60 Z M240 180 H290 C318 180 340 202 340 230 C340 258 318 280 290 280 H240 V180 Z"/>
+  <!-- TB 字母 -->
+  <path class="tb-color" d="M40 80 H180 V130 H140 V260 H90 V130 H40 Z M220 80 H300 C333 80 360 107 360 140 C360 173 333 200 300 200 H240 V140 H220 V80 Z M240 200 H290 C318 200 340 222 340 250 C340 278 318 300 290 300 H240 V200 Z"/>
   
-  <!-- 四葉草，改用 symbol 重複使用 -->
+  <!-- 四葉草移到右上角 -->
   <defs>
-    <path id="leaf" d="M0 0 C-12 -12, -12 -25, 0 -25 C12 -25, 12 -12, 0 0 Z"/>
+    <path id="leaf" d="M0 0 C-10 -10, -10 -22, 0 -22 C10 -22, 10 -10, 0 0 Z"/>
   </defs>
   
-  <g class="clover-color" transform="translate(195, 155)">
-    <use href="#leaf" transform="rotate(45) translate(0, -18)"/>
-    <use href="#leaf" transform="rotate(135) translate(0, -18)"/>
-    <use href="#leaf" transform="rotate(225) translate(0, -18)"/>
-    <use href="#leaf" transform="rotate(315) translate(0, -18)"/>
-    <rect x="-2" y="0" width="4" height="30" rx="2"/>
+  <g class="clover-color" transform="translate(330, 95) scale(0.8)">
+    <use href="#leaf" transform="rotate(45) translate(0, -16)"/>
+    <use href="#leaf" transform="rotate(135) translate(0, -16)"/>
+    <use href="#leaf" transform="rotate(225) translate(0, -16)"/>
+    <use href="#leaf" transform="rotate(315) translate(0, -16)"/>
+    <rect x="-1.5" y="0" width="3" height="25" rx="1.5"/>
   </g>
 
   
