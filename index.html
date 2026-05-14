@@ -3,9 +3,59 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#fff}svg{max-width:100%;height:auto}</style>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0f172a; /* 與 SVG 背景一致，避免突兀 */
+  }
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* ========== TB Art Logo 固定右上角 (與先前設計一致) ========== */
+  .tb-logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    z-index: 9999;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .tb-logo:hover {
+    transform: scale(1.05);
+  }
+  .tb-logo text {
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    fill: url(#tbGrad);
+    letter-spacing: -1px;
+  }
+</style>
 </head>
 <body>
+
+<!-- ================= TB Art Logo (固定右上角) ================= -->
+<svg class="tb-logo" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="tbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF" />
+      <stop offset="100%" stop-color="#7B61FF" />
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="23" fill="rgba(10,14,39,0.92)" stroke="url(#tbGrad)" stroke-width="2"/>
+  <text x="24" y="32" text-anchor="middle">TB</text>
+</svg>
+
+<!-- 原有的 Data Quality Checks SVG（已移除內部綠色幸運草標誌） -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -21,12 +71,6 @@
       <stop offset="0%" stop-color="#06b6d4"/>
       <stop offset="50%" stop-color="#3b82f6"/>
       <stop offset="100%" stop-color="#8b5cf6"/>
-    </linearGradient>
-    <!-- Green gradient for TB Clover -->
-    <linearGradient id="cloverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10b981"/>
-      <stop offset="50%" stop-color="#22c55e"/>
-      <stop offset="100%" stop-color="#16a34a"/>
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -93,13 +137,6 @@
       transition: transform 0.3s ease;
       transform-origin: center;
     }
-    .tb-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      fill: url(#cloverGrad);
-      letter-spacing: 0.5px;
-    }
     .grid-line {
       stroke: #1e293b;
       stroke-width: 1;
@@ -110,17 +147,7 @@
   
   <rect width="1200" height="1600" fill="url(#bgGrad)"/>
   
-  <!-- Green TB Clover Logo - Top Right -->
-  <g transform="translate(1080, 35)">
-    <!-- 3 clover leaves -->
-    <circle cx="0" cy="-8" r="8" fill="url(#cloverGrad)"/>
-    <circle cx="-8" cy="0" r="8" fill="url(#cloverGrad)"/>
-    <circle cx="8" cy="0" r="8" fill="url(#cloverGrad)"/>
-    <!-- Stem -->
-    <path d="M0 8 L3 18 L0 16 L-3 18 Z" fill="url(#cloverGrad)"/>
-    <!-- Green TB text -->
-    <text x="0" y="35" text-anchor="middle" class="tb-text">TB</text>
-  </g>
+  <!-- 移除原本右上角的綠色幸運草標誌，避免與外部固定 TB Logo 重複 -->
   
   <g opacity="0.03">
     <path d="M0 100 H1200" class="grid-line"/>
